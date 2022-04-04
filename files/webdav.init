@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2021 ImmortalWrt
+
+START=90
+STOP=10
+
+WEBDAV="/usr/bin/webdav"
+
+WEBDAVCONFIG="/etc/config/WebDav.yaml"
+
+start() {
+	"${WEBDAV}" -c "${WEBDAVCONFIG}" >/dev/null 2>&1 &
+}
+
+stop() {
+	killall -9 webdav >/dev/null 2>&1
+}
