@@ -40,7 +40,7 @@ By default, it runs on a random free port and supports JSON, YAML and TOML confi
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/bin/ $(1)/etc/config/ $(1)/etc/init.d/
+	$(INSTALL_DIR) $(1)/usr/bin/ $(1)/etc/config/ $(1)/etc/init.d/ $(1)/etc/webdav/
 	$(INSTALL_BIN) $(GO_PKG_BUILD_BIN_DIR)/webdav $(1)/usr/bin/
 	$(INSTALL_CONF) $(CURDIR)/files/webdav.yaml $(1)/etc/webdav/webdav.yaml
 	$(INSTALL_BIN) $(CURDIR)/files/webdav.init $(1)/etc/init.d/webdav
