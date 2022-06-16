@@ -2,4 +2,4 @@
 
 Inspire by https://github.com/hacdias/webdav
 
-useconfig : /etc/config/webdav.yaml
+useconfig : /etc/webdav/webdav.yaml
