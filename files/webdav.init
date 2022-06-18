@@ -8,6 +8,21 @@ WEBDAV="/usr/bin/webdav"
 
 WEBDAVCONFIG="/etc/webdav/webdav.yaml"
 
+restart() {
+echo luci for webdav
+local vt_enabled=`uci get webdav.@arguments[0].enabled 2>/dev/null`
+	echo webdav status is $vt_enabled 
+	if [ "$vt_enabled" = 1 ]; then
+		logger -t alex restarting webdav
+    sleep 1s
+		/etc/init.d/webdav start
+	else	
+		logger -t alex stopping webdav
+    sleep 1s
+		/etc/init.d/webdav stop
+	fi
+}
+
 start() {
 	"${WEBDAV}" -c "${WEBDAVCONFIG}" >/dev/null 2>&1 &
 }
