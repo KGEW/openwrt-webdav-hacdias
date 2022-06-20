@@ -29,7 +29,7 @@ cors:
 users:
   - username: admin
     password: admin
-    scope: /mnt/sda1
+    scope: /mnt
   - username: basic
     password: basic
     modify:   true
